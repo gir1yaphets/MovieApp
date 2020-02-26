@@ -15,6 +15,8 @@
 		100126C823FF8054009EC0F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 100126C623FF8054009EC0F4 /* LaunchScreen.storyboard */; };
 		10301F762405F6DA00B4FC04 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10301F752405F6DA00B4FC04 /* MovieViewModel.swift */; };
 		10301F78240608C400B4FC04 /* MovieClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10301F77240608C400B4FC04 /* MovieClient.swift */; };
+		4D974CAF2406292800CDE5BE /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D974CAE2406292800CDE5BE /* MovieModel.swift */; };
+		4D974CB12406411600CDE5BE /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D974CB02406411600CDE5BE /* MovieData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		100126C923FF8054009EC0F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10301F752405F6DA00B4FC04 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 		10301F77240608C400B4FC04 /* MovieClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieClient.swift; sourceTree = "<group>"; };
+		4D974CAE2406292800CDE5BE /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
+		4D974CB02406411600CDE5BE /* MovieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,17 +64,51 @@
 		100126BA23FF8052009EC0F4 /* MovieMvvmApp */ = {
 			isa = PBXGroup;
 			children = (
+				4D974CB5240655CF00CDE5BE /* view */,
+				4D974CB4240655B100CDE5BE /* model */,
+				4D974CB32406559100CDE5BE /* controller */,
+				4D974CB22406557100CDE5BE /* viewmodel */,
 				100126BB23FF8052009EC0F4 /* AppDelegate.swift */,
 				100126BD23FF8052009EC0F4 /* SceneDelegate.swift */,
-				100126BF23FF8052009EC0F4 /* ViewController.swift */,
-				10301F77240608C400B4FC04 /* MovieClient.swift */,
-				100126C123FF8052009EC0F4 /* Main.storyboard */,
 				100126C423FF8054009EC0F4 /* Assets.xcassets */,
 				100126C623FF8054009EC0F4 /* LaunchScreen.storyboard */,
 				100126C923FF8054009EC0F4 /* Info.plist */,
-				10301F752405F6DA00B4FC04 /* MovieViewModel.swift */,
 			);
 			path = MovieMvvmApp;
+			sourceTree = "<group>";
+		};
+		4D974CB22406557100CDE5BE /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				10301F752405F6DA00B4FC04 /* MovieViewModel.swift */,
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
+		4D974CB32406559100CDE5BE /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				100126BF23FF8052009EC0F4 /* ViewController.swift */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		4D974CB4240655B100CDE5BE /* model */ = {
+			isa = PBXGroup;
+			children = (
+				10301F77240608C400B4FC04 /* MovieClient.swift */,
+				4D974CAE2406292800CDE5BE /* MovieModel.swift */,
+				4D974CB02406411600CDE5BE /* MovieData.swift */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		4D974CB5240655CF00CDE5BE /* view */ = {
+			isa = PBXGroup;
+			children = (
+				100126C123FF8052009EC0F4 /* Main.storyboard */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,8 +182,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D974CAF2406292800CDE5BE /* MovieModel.swift in Sources */,
 				100126C023FF8052009EC0F4 /* ViewController.swift in Sources */,
 				100126BC23FF8052009EC0F4 /* AppDelegate.swift in Sources */,
+				4D974CB12406411600CDE5BE /* MovieData.swift in Sources */,
 				10301F78240608C400B4FC04 /* MovieClient.swift in Sources */,
 				100126BE23FF8052009EC0F4 /* SceneDelegate.swift in Sources */,
 				10301F762405F6DA00B4FC04 /* MovieViewModel.swift in Sources */,

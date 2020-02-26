@@ -20,6 +20,12 @@ class ViewController: UIViewController {
         
         viewModel = MovieViewModel()
         tableView.dataSource = self
+        
+        viewModel.fetchMovies() { (movies : [MovieModel]?) in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 
 }
