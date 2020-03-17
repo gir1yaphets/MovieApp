@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         
         viewModel = MovieViewModel()
         tableView.dataSource = self
+        tableView.register(UINib(nibName: "MovieTableCell", bundle: nil), forCellReuseIdentifier: "ReusebleCell")
         
         viewModel.fetchMovies() { (movies : [MovieModel]?) in
             DispatchQueue.main.async {
@@ -36,13 +37,13 @@ extension ViewController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReusebleCell", for: indexPath) as! MovieTableCell
         configureCell(cell, rowAtIndexPath : indexPath)
         return cell
     }
     
-    func configureCell(_ cell : UITableViewCell, rowAtIndexPath index : IndexPath) {
-        cell.textLabel?.text = viewModel.getMovieInfo(movieItemIndex : index.item)
+    func configureCell(_ cell : MovieTableCell, rowAtIndexPath index : IndexPath) {
+        cell.movieLabel?.text = viewModel.getMovieInfo(movieItemIndex : index.item)
     }
 }
 
