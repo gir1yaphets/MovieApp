@@ -7,13 +7,16 @@
 //
 
 import Foundation
+import Alamofire
 
 class MovieClient {
     
     let urlString = "https://itunes.apple.com/us/rss/topmovies/limit=25/json"
     
     func fetchMovies(completion : @escaping (_ movies : [MovieModel]?) -> () ) {
-        performRequest(with: urlString, completion: completion)
+//        performRequest(with: urlString, completion: completion)
+        
+        performRequestWithAf(with: urlString, completion: completion)
     }
     
     func performRequest(with urlString : String, completion : @escaping (_ movies : [MovieModel]?) -> ()) {
@@ -50,6 +53,25 @@ class MovieClient {
             return movies
         } catch {
             return nil
+        }
+    }
+    
+    func performRequestWithAf(with urlString : String, completion : @escaping (_ movies : [MovieModel]) -> ()) -> Void {
+        var movies : [MovieModel] = []
+        
+        AF.request(urlString)
+            .responseDecodable(of: MovieData.self) { (responseDec) in
+                guard let decodedData = responseDec.value
+                    else {return}
+                
+                for entry in decodedData.feed.entry {
+                    let movieName = entry.imName.label
+                    let movieModel = MovieModel(movieName: movieName)
+                    
+                    movies.append(movieModel)
+                }
+                
+                completion(movies)
         }
     }
 }
