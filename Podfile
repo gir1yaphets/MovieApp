@@ -7,5 +7,6 @@ target 'MovieMvvmApp' do
 
   # Pods for MovieMvvmApp
   pod 'Alamofire', '~> 5.0'
+  pod "PromiseKit", "~> 6.8"
 
 end

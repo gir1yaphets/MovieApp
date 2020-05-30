@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,10 @@
 		10301F78240608C400B4FC04 /* MovieClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10301F77240608C400B4FC04 /* MovieClient.swift */; };
 		4D974CAF2406292800CDE5BE /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D974CAE2406292800CDE5BE /* MovieModel.swift */; };
 		4D974CB12406411600CDE5BE /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D974CB02406411600CDE5BE /* MovieData.swift */; };
+		4DBBB38024280A86004DECCE /* MovieTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DBBB37E24280A86004DECCE /* MovieTableCell.xib */; };
+		4DBBB38124280A86004DECCE /* MovieTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBBB37F24280A86004DECCE /* MovieTableCell.swift */; };
+		4DCB18432480C025008E5BCF /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB18422480C025008E5BCF /* ApiManager.swift */; };
+		FDAD869E1C6783EEB7B4E881 /* Pods_MovieMvvmApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB67F647C7CAFA7DD0B2691F /* Pods_MovieMvvmApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +34,14 @@
 		100126C923FF8054009EC0F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10301F752405F6DA00B4FC04 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 		10301F77240608C400B4FC04 /* MovieClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieClient.swift; sourceTree = "<group>"; };
+		27D2B7EC7EE264C485B5066A /* Pods-MovieMvvmApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieMvvmApp.debug.xcconfig"; path = "Target Support Files/Pods-MovieMvvmApp/Pods-MovieMvvmApp.debug.xcconfig"; sourceTree = "<group>"; };
 		4D974CAE2406292800CDE5BE /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		4D974CB02406411600CDE5BE /* MovieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieData.swift; sourceTree = "<group>"; };
+		4DBBB37E24280A86004DECCE /* MovieTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieTableCell.xib; sourceTree = "<group>"; };
+		4DBBB37F24280A86004DECCE /* MovieTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTableCell.swift; sourceTree = "<group>"; };
+		4DCB18422480C025008E5BCF /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		C6E1CDA69C3111F933071850 /* Pods-MovieMvvmApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieMvvmApp.release.xcconfig"; path = "Target Support Files/Pods-MovieMvvmApp/Pods-MovieMvvmApp.release.xcconfig"; sourceTree = "<group>"; };
+		FB67F647C7CAFA7DD0B2691F /* Pods_MovieMvvmApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieMvvmApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDAD869E1C6783EEB7B4E881 /* Pods_MovieMvvmApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +61,8 @@
 			children = (
 				100126BA23FF8052009EC0F4 /* MovieMvvmApp */,
 				100126B923FF8052009EC0F4 /* Products */,
+				97C3EF308C7D4E0575BCB2D9 /* Pods */,
+				70AF2A60FD768D9FA746D850 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +86,7 @@
 				100126C423FF8054009EC0F4 /* Assets.xcassets */,
 				100126C623FF8054009EC0F4 /* LaunchScreen.storyboard */,
 				100126C923FF8054009EC0F4 /* Info.plist */,
+				4DCB18422480C025008E5BCF /* ApiManager.swift */,
 			);
 			path = MovieMvvmApp;
 			sourceTree = "<group>";
@@ -106,9 +120,28 @@
 		4D974CB5240655CF00CDE5BE /* view */ = {
 			isa = PBXGroup;
 			children = (
+				4DBBB37F24280A86004DECCE /* MovieTableCell.swift */,
+				4DBBB37E24280A86004DECCE /* MovieTableCell.xib */,
 				100126C123FF8052009EC0F4 /* Main.storyboard */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		70AF2A60FD768D9FA746D850 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB67F647C7CAFA7DD0B2691F /* Pods_MovieMvvmApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		97C3EF308C7D4E0575BCB2D9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				27D2B7EC7EE264C485B5066A /* Pods-MovieMvvmApp.debug.xcconfig */,
+				C6E1CDA69C3111F933071850 /* Pods-MovieMvvmApp.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,9 +151,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 100126CC23FF8054009EC0F4 /* Build configuration list for PBXNativeTarget "MovieMvvmApp" */;
 			buildPhases = (
+				82ACD414DEEE7B5C7281829A /* [CP] Check Pods Manifest.lock */,
 				100126B423FF8052009EC0F4 /* Sources */,
 				100126B523FF8052009EC0F4 /* Frameworks */,
 				100126B623FF8052009EC0F4 /* Resources */,
+				7C68A5E84FF52C6479083090 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -172,10 +207,53 @@
 				100126C823FF8054009EC0F4 /* LaunchScreen.storyboard in Resources */,
 				100126C523FF8054009EC0F4 /* Assets.xcassets in Resources */,
 				100126C323FF8052009EC0F4 /* Main.storyboard in Resources */,
+				4DBBB38024280A86004DECCE /* MovieTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7C68A5E84FF52C6479083090 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MovieMvvmApp/Pods-MovieMvvmApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MovieMvvmApp/Pods-MovieMvvmApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MovieMvvmApp/Pods-MovieMvvmApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		82ACD414DEEE7B5C7281829A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MovieMvvmApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		100126B423FF8052009EC0F4 /* Sources */ = {
@@ -183,12 +261,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D974CAF2406292800CDE5BE /* MovieModel.swift in Sources */,
+				4DCB18432480C025008E5BCF /* ApiManager.swift in Sources */,
 				100126C023FF8052009EC0F4 /* ViewController.swift in Sources */,
 				100126BC23FF8052009EC0F4 /* AppDelegate.swift in Sources */,
 				4D974CB12406411600CDE5BE /* MovieData.swift in Sources */,
 				10301F78240608C400B4FC04 /* MovieClient.swift in Sources */,
 				100126BE23FF8052009EC0F4 /* SceneDelegate.swift in Sources */,
 				10301F762405F6DA00B4FC04 /* MovieViewModel.swift in Sources */,
+				4DBBB38124280A86004DECCE /* MovieTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,16 +410,18 @@
 		};
 		100126CD23FF8054009EC0F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27D2B7EC7EE264C485B5066A /* Pods-MovieMvvmApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 92BTLMQ6WY;
+				DEVELOPMENT_TEAM = 9Z558423DG;
 				INFOPLIST_FILE = MovieMvvmApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ucimswe.MovieMvvmApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ucimswe.noodles.MovieMvvmApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -348,16 +430,18 @@
 		};
 		100126CE23FF8054009EC0F4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6E1CDA69C3111F933071850 /* Pods-MovieMvvmApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 92BTLMQ6WY;
+				DEVELOPMENT_TEAM = 9Z558423DG;
 				INFOPLIST_FILE = MovieMvvmApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ucimswe.MovieMvvmApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ucimswe.noodles.MovieMvvmApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import PromiseKit
 
 class MovieViewModel {
     
     var movieClient : MovieClient = MovieClient()
+    
     var movies : [MovieModel]?
     
     func getMovieItemCount() -> Int {
@@ -27,9 +29,9 @@ class MovieViewModel {
     }
     
     func fetchMovies(completion : @escaping (_ movies : [MovieModel]?) -> ()) {
-        movieClient.fetchMovies { (movies : [MovieModel]?) in
-            self.movies = movies
-            completion(movies)
+        ApiManager.shared.fetchMovies().done { (movieList) in
+            self.movies = movieList
+            completion(self.movies)
         }
     }
 }
