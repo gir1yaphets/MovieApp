@@ -7,8 +7,22 @@
 //
 
 import Foundation
+import RxDataSources
 
-struct MovieModel : Codable {
+struct MovieSections {
+    var items: [MovieModel]
+}
+
+extension MovieSections: SectionModelType {
+    init(original: MovieSections, items: [MovieModel]) {
+        self = original
+        self.items = items
+    }
+    
+    typealias Item = MovieModel
+}
+
+struct MovieModel {
     let movieName : String
 }
 

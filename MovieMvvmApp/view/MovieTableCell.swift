@@ -13,6 +13,8 @@ class MovieTableCell: UITableViewCell {
     
     @IBOutlet weak var movieLabel: UILabel!
     
+    static let identifier = "MovieTableCell"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,6 +24,10 @@ class MovieTableCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func configureCell(with data: MovieModel) {
+        movieLabel.text = data.movieName
     }
     
 }

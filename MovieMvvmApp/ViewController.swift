@@ -7,43 +7,31 @@
 //
 
 import UIKit
+import RxSwift
+import RxDataSources
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var viewModel : MovieViewModel!
+    var viewModel = MovieViewModel()
+    var dataSource: RxTableViewSectionedReloadDataSource<MovieSections>!
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        viewModel = MovieViewModel()
-        tableView.dataSource = self
-        tableView.register(UINib(nibName: "MovieTableCell", bundle: nil), forCellReuseIdentifier: "ReusebleCell")
+        tableView.register(UINib(nibName: MovieTableCell.identifier, bundle: nil), forCellReuseIdentifier: MovieTableCell.identifier)
         
-        viewModel.fetchMovies() { (movies : [MovieModel]?) in
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
+        dataSource = RxTableViewSectionedReloadDataSource<MovieSections>(configureCell: { (dataSource, tableView, indexPath, item) -> UITableViewCell in
+            let cell = tableView.dequeueReusableCell(withIdentifier: MovieTableCell.identifier, for: indexPath) as! MovieTableCell
+            cell.configureCell(with: item)
+            return cell
+        })
+        
+        viewModel.fetchMovies().bind(to: tableView.rx.items(dataSource: self.dataSource)).disposed(by: disposeBag)
     }
 
-}
-
-extension ViewController : UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.getMovieItemCount()
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ReusebleCell", for: indexPath) as! MovieTableCell
-        configureCell(cell, rowAtIndexPath : indexPath)
-        return cell
-    }
-    
-    func configureCell(_ cell : MovieTableCell, rowAtIndexPath index : IndexPath) {
-        cell.movieLabel?.text = viewModel.getMovieInfo(movieItemIndex : index.item)
-    }
 }
 

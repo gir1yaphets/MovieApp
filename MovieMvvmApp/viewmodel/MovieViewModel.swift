@@ -7,29 +7,15 @@
 //
 
 import Foundation
+import RxSwift
 
 class MovieViewModel {
     
     var movieClient : MovieClient = MovieClient()
-    var movies : [MovieModel]?
+    var movies : BehaviorSubject<[MovieModel]>?
     
-    func getMovieItemCount() -> Int {
-        return movies?.count ?? 0
+    func fetchMovies() -> Observable<[MovieSections]> {
+        return ApiManager.shared.fetchMovies()
     }
     
-    func getMovieInfo(movieItemIndex : Int) -> String {
-        guard let name = movies?[movieItemIndex].movieName
-            else {
-                return ""
-            }
-        
-        return name
-    }
-    
-    func fetchMovies(completion : @escaping (_ movies : [MovieModel]?) -> ()) {
-        movieClient.fetchMovies { (movies : [MovieModel]?) in
-            self.movies = movies
-            completion(movies)
-        }
-    }
 }
