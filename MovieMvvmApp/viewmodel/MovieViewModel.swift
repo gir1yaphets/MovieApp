@@ -11,7 +11,6 @@ import RxSwift
 
 class MovieViewModel {
     
-    var movieClient : MovieClient = MovieClient()
     var movies : BehaviorSubject<[MovieModel]>?
     
     func fetchMovies() -> Observable<[MovieSections]> {

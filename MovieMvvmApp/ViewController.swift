@@ -30,7 +30,9 @@ class ViewController: UIViewController {
             return cell
         })
         
-        viewModel.fetchMovies().bind(to: tableView.rx.items(dataSource: self.dataSource)).disposed(by: disposeBag)
+        viewModel.fetchMovies()
+        .asDriver(onErrorJustReturn: [])
+        .drive(tableView.rx.items(dataSource: self.dataSource)).disposed(by: disposeBag)
     }
 
 }
